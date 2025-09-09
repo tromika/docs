@@ -1,0 +1,31 @@
+---
+description: >-
+  Discover the Cantina finding submission process, including severity
+  assessment, detailed descriptions, and insights into effective vulnerability
+  reporting.
+---
+
+# 🔸 Findings Submission
+
+## Finding Submission Process
+
+There are two ways to start the finding submission process. By [highlighting-code.md](../code-review/highlighting-code.md "mention") during a [code-review](../code-review/ "mention")or clicking the "_New Finding"_ button in the top right corner of the [.](./ "mention") section.
+
+To submit a finding the following fields must be filled unless optional.
+
+* **Severity**: Extent of the damages or consequences caused if this were to be exploited. This metric is a product of other factors like Likelihood and Impact, it helps in understanding how critical the vulnerability is and determine the urgency of the remediation efforts. Severity levels often range from _Critical_ (causing severe damage, such as loss of funds, denial of services, system failures..) to _Low_ (resulting in minimal impact with no severe consequences).
+* **Likelihood (optional)**: The probability of this vulnerability being exploited or triggered.
+* **Impact (optional)**: Potential consequences if this were to be exploited or triggered.
+* **Title:** A concise label or headline for the finding. The title should be informative and quickly convey the essence of the vulnerability, making it easy for anyone to understand the nature of the issue at a glance.
+* **Description**: A detailed explanation which must clearly describe the existence of a problem, its cause and consequences using any available means to communicate the point such as tests, proofs of concept or [diagrams-and-formulas.md](../diagrams-and-formulas.md "mention").
+  * **Select template**: Standard templates providing a structured writing format.
+
+{% hint style="info" %}
+**You can** [add-code-to-existing-finding.md](add-code-to-existing-finding.md "mention") **if it does not contain a highlighted area of code.**
+{% endhint %}
+
+<figure><img src="../../../.gitbook/assets/image (5).png" alt="Security vulnerability submission interface."><figcaption><p>submit a finding</p></figcaption></figure>
+
+{% embed url="https://app.arcade.software/share/TIvVgzL8aRjuoUNNbT7p" %}
+
+When the finding is submitted it will be displayed in the [.](./ "mention") section of the interface.

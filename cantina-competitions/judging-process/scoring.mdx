@@ -1,0 +1,37 @@
+---
+description: >-
+  Discover how Cantina's public security competition prizes are distributed,
+  ensuring unique finds get rewarded. Explore scoring for optimal participation.
+---
+
+# 📜 Scoring
+
+## Prize-pot Distribution
+
+Public security competition works the following way: a prize-pot of funds will be available to be shared among participants who score points. A **high severity** submission is worth **10 points** and a **medium severity** submission is worth **3 points.**
+
+{% hint style="info" %}
+Custom pot for low submissions
+{% endhint %}
+
+In case when two different members submit duplicate findings, the number of points that each person will be scaled down.&#x20;
+
+The scaling formula is $$\frac{0.9^{n - 1}}{n}$$where $$n$$ is the total number of duplicated findings.&#x20;
+
+For example, if there were duplicated findings for a high severity bugs, instead of getting 10 points each, each would be awarded 4.5 points.  In case of 3 duplicates, each person gets 2.7 points.
+
+The scoring mechanism incentivizes unique findings, so finding the one bug that everyone missed can help you get a large payout.
+
+### FAQs
+
+* _**Does it matter who submitted the finding first?**_&#x20;
+
+No, every finding is scored the same regardless of when it was submitted during the contest duration. We highly encourage you to spend time writing great findings. We also encourage submitting it as soon as you have a great write-up. This way, the team can often leave feedback on the finding and plan for fixes. We particularly want to discourage people who submit findings at the last moment.&#x20;
+
+* _**Can I withdraw findings that I submitted?**_&#x20;
+
+Yes, you can withdraw findings by going to the finding context menu and clicking 'withdraw finding'.
+
+* _**How are low-severity / informational / gas-optimization scored and judged?**_&#x20;
+
+Some competitions may have a pool reserved for low-severity, informational and gas-optimization. This would be explicitly mentioned in the competition specific page, and these prizes are awarded for the top findings. Note: only quality of the findings are considered, not quantity. Excellent writeups for high and medium severity findings can also get awards from this separate pot. &#x20;

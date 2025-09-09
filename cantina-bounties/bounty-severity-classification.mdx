@@ -1,0 +1,174 @@
+---
+description: >-
+  Explore Cantina’s bug bounty severity classification system. Learn how we
+  assess vulnerabilities, categorize risks, and ensure Web3 security integrity.
+---
+
+# Bounty Severity Classification
+
+### **Introduction**
+
+At [Cantina](https://cantina.xyz/solutions/bounties), we prioritize the security and integrity of our ecosystem. This **Severity Classification System** provides a standardized framework for evaluating and categorizing vulnerabilities based on their **impact** and **likelihood of exploitation**. This system is designed to ensure consistency and transparency in assessing risks across our programs.\
+\
+\
+**Note:** This bounty severity classification serves as a general guide and may be customized based on individual client requirements. Some bug bounty programs may define their own severity criteria, so please review the respective program's home page carefully
+
+***
+
+### **Severity Levels**
+
+We classify vulnerabilities in **four distinct levels** based on their **impact** and **likelihood of exploitation**. The severity of a vulnerability is determined by combining these two factors using the **Risk Classification Matrix** below:
+
+| **Severity Level**     | **Impact: Critical** | **Impact: High** | **Impact: Medium** | **Impact: Low** |
+| ---------------------- | -------------------- | ---------------- | ------------------ | --------------- |
+| **Likelihood: High**   | Critical             | High             | Medium             | Low             |
+| **Likelihood: Medium** | High                 | High             | Medium             | Low             |
+| **Likelihood: Low**    | Medium               | Medium           | Low                | Informational   |
+
+***
+
+#### **1. Critical**
+
+* **Impact**: Catastrophic damage to the protocol or its users.
+  * Examples include severe loss of **assets**, permanent system disruption, or widespread compromise.
+* **Likelihood**: High, with minimal or no user interaction required.
+  * Exploitation is very easy or highly incentivized.
+* **Examples**:
+  * Permanent loss or freezing of **assets**.
+  * Network-wide shutdown or inability to confirm transactions.
+  * Unintended permanent chain splits requiring a hard fork.
+  * Protocol insolvency or governance manipulation leading to direct financial harm.
+  * **Web2**: Account takeover with significant impact (e.g., admin account compromise).
+
+***
+
+#### **2. High**
+
+* **Impact**: Significant damage to the protocol or its users, but not catastrophic.
+  * Examples include notable financial loss or significant harm to user trust.
+* **Likelihood**: Medium to high, with some user interaction or specific conditions required.
+  * Exploitation is possible under certain conditions.
+* **Examples**:
+  * Temporary freezing of **assets** or transactions.
+  * Unintended chain splits (network partitions).
+  * Theft of unclaimed yield or royalties.
+  * Exploits requiring elevated privileges but with high impact.
+  * **Web2**: Account takeover with moderate impact (e.g., user account compromise).
+
+***
+
+#### **3. Medium**
+
+* **Impact**: Moderate damage, often limited to specific users or conditions.
+  * Examples include limited financial damage or moderate system impact.
+* **Likelihood**: Medium, requiring specific conditions or user interaction.
+  * Exploitation is possible but not trivial.
+* **Examples**:
+  * Increased resource consumption or temporary disruption of network nodes.
+  * Theft of gas or griefing attacks with no direct profit motive.
+  * Bugs causing unintended smart contract behavior without direct financial risk.
+  * **Web2**: Non-sensitive data disclosure, open redirects, or reflected HTML injection.
+
+***
+
+#### **4. Low**
+
+* **Impact**: Minor damage, often limited to non-critical functionality.
+  * Examples include minimal direct risk or areas for improvement.
+* **Likelihood**: Low, requiring significant user interaction or unlikely conditions.
+  * Exploitation is difficult or requires highly specific conditions.
+* **Examples**:
+  * Shutdown of a small percentage of network nodes without network-wide impact.
+  * Modification of transaction fees outside design parameters.
+  * Non-critical UI/UX issues or minor information disclosure.
+  * **Web2**: Minor UI/UX issues or non-critical functionality disruptions.
+
+***
+
+### **Scope and Considerations**
+
+#### **Blockchain**
+
+* **Critical**: Network-wide issues, permanent **asset** loss, or hard fork requirements.
+* **High**: Temporary network disruptions or unintended chain splits.
+* **Medium**: Resource consumption spikes or localized node shutdowns.
+* **Low**: Minor node disruptions or fee modifications.
+
+#### **Smart Contracts**
+
+* **Critical**: Direct theft, permanent freezing of **assets**, or governance manipulation.
+* **High**: Theft of unclaimed yield, temporary freezing of **assets**, or unauthorized minting.
+* **Medium**: Griefing, gas theft, or unbounded gas consumption.
+* **Low**: Non-critical contract behavior or minor functionality issues.
+
+#### **Websites and Apps**
+
+* **Critical**: Remote code execution, unauthorized access to sensitive data, or significant financial harm.
+* **High**: Sensitive data disclosure, subdomain takeovers (case-by-case basis), or unauthorized actions.
+* **Medium**: Non-sensitive data disclosure, open redirects, or reflected HTML injection.
+* **Low**: Minor UI/UX issues or non-critical functionality disruptions.
+
+***
+
+### **Out of Scope**
+
+The following are considered out of scope for our vulnerability classification system:
+
+* **Theoretical vulnerabilities** without proof of concept.
+* **Social engineering attacks** or phishing.
+* **Issues requiring physical access** to a user's device or local network.
+* **Best practice recommendations** or feature requests.
+* **Third-party integrations** or dependencies not under our control.
+* **Denial of Service (DoS) attacks** without demonstrated impact.
+* **Self-XSS** or non-exploitable UI/UX issues.
+* **Clickjacking** on pages with no sensitive actions.
+* **Server Information & Status Pages** (e.g., stack traces, descriptive error messages).
+* **SSL/TLS best practices** (e.g., missing SSL Pinning, insecure configurations).
+* **Optional email security features** (e.g., SPF/DKIM/DMARC configurations).
+* **Most issues related to rate limiting**.
+* **Content-Security-Policy configuration opinions**.
+* **Verbose error messages** without proof of exploitability.
+* **Attacks requiring MITM or physical access** to a user's device.
+* **Reports from automated tools or scans**.
+* **Missing HTTP Only flags on non-sensitive cookies**.
+* **Content spoofing, text injection**.
+* **Issues without clearly identified security impact**.
+* **Self-exploitation** (e.g., self-XSS, self-DoS, cookie reuse).
+* **Tabnabbing**.
+* **Brute forcing account credentials**.
+* **Known vulnerable libraries** without a working Proof of Concept.
+* **Open access to publicly-exposed resources** (e.g., Google Sheets) without demonstration of vulnerability exploitation.
+
+***
+
+### **Testing Guidelines**
+
+To ensure safe and responsible testing:
+
+* Use **local forks** for testing instead of public chains.
+* Avoid actions that could disrupt network availability or integrity.
+* Do not attempt to access, modify, or destroy data that does not belong to you.
+* Submit detailed reports with **proof of concept** and steps to reproduce the vulnerability.
+
+***
+
+### **Eligibility**
+
+To qualify for consideration:
+
+* Report a **previously unknown, non-public vulnerability** within the program's scope.
+* Be the **first to disclose** the vulnerability.
+* Provide sufficient information for our team to reproduce and resolve the issue.
+* Avoid exploiting the vulnerability or making it public.
+* Comply with all program rules and guidelines.
+
+***
+
+### **Prohibited Actions**
+
+The following actions are strictly prohibited:
+
+* Testing on **public mainnet or testnet deployments**.
+* Public disclosure of vulnerabilities without prior consent.
+* Engaging in **illegal activities** or coercive tactics.
+* Exploiting vulnerabilities for personal gain.

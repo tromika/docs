@@ -1,0 +1,43 @@
+---
+description: >-
+  Use Mermaid.js and MathJax in Cantina Code to create diagrams and render
+  formulas, enhancing clarity and efficiency in findings and comments.
+---
+
+# 🔶 Diagrams & Formulas
+
+Cantina Code supports **diagramming** libraries such as [Mermaid.js](https://mermaid.js.org/) and **MathJax for** mathematical formula rendering. Paired with a well written finding or comment, these tools allow you to visually and efficiently communicate your point to the reader.
+
+## Mermaid Diagram
+
+The following code block
+
+```mermaid
+sequenceDiagram
+    participant Bank
+    participant Attacker
+
+    Attacker->>+Bank: Request withdrawal
+    Bank->>+Attacker: Transfer funds
+    Attacker->>+Bank: Request withdrawal (reentry)
+    Bank->>+Attacker: Transfer funds (reentry)
+    Bank-->>-Attacker: Insufficient balance
+```
+
+when introduced as a comment will display as illustrated in the image below.
+
+<figure><img src="../../.gitbook/assets/image (25).png" alt="Sequence diagram shows smart contract reentrancy attack."><figcaption><p>Rendered mermaid diagram</p></figcaption></figure>
+
+## MathJax Formulas
+
+Cantina Comments also render MathJax formulas. The following code block
+
+```
+$$
+H_{f} = \frac {\sum Collateral_{i}\;in\;ETH  \times  Liquidation\;Threshold}{Total\;Collateral\;in\;ETH} 
+$$
+```
+
+when introduced inside a comment will render as such
+
+<figure><img src="../../.gitbook/assets/image (35).png" alt="ssue in Cantina Code with a mathematical formula using Mathjax, highlighting a potential error in implementation for Web3 security audits."><figcaption><p>Rendered Mathjax formula</p></figcaption></figure>

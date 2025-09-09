@@ -1,0 +1,133 @@
+---
+description: >-
+  Gain up to $300,000 in bug bounty and exploit coverage by completing a
+  Spearbit/Cantina security review and competition. Protect your launch today.
+---
+
+# Cantina Coverage Details
+
+Every protocol that completes an review and competition with Spearbit/Cantina gains access to bug bounty and exploit coverage for their audited code. Our goal is to provide robust security and financial protection during your protocol’s most critical phase: the first 30 days post-launch and beyond.
+
+***
+
+### **How It Works**
+
+1. **Complete a Spearbit/Cantina Security Review**
+2. **Complete a Cantina Competition**
+   * Engage with our team for a comprehensive Security competition tailored to your protocol's needs.
+3. **Post-Launch Coverage**
+   * Post-launch, Cantina sets up a pre-launch bug bounty hosted exclusively on Cantina.
+   * Cantina provides up to **$300,000** in bug bounty and exploit coverage for the first 30 days.
+   * After 30 days, you have the option to purchase continued bug bounty coverage for the reviewed code from our partner
+
+***
+
+### **Coverage Amount Criteria**
+
+**Important Note:** These metrics are intended as guidelines only. Cantina reserves the right to make the final determination on the security score and coverage amount.
+
+Coverage is based on a simplified **Security Score**:
+
+#### **Security Score:**
+
+* **Base Score:** 100 points
+* **Finding Correction:**
+  * Please note this is a per finding reduction in points.
+    * High Severity Finding: -10 points
+    * Medium Severity Finding: -5 points
+* **Safe Scope Duration Points:**
+  * Adherence to recommended timeline: No penalty
+  * Reduced Timeline: -10 points
+* **Security Measures Diversity Points:**
+  * Multiple security initiatives like vCISO, multiple previous security reviews: Up to +10 Points
+
+#### **Score Multipliers:**
+
+* **Review Multiplier:**
+  * Spearbit review: 1.2x
+  * Cantina review: 1.0x
+* **Competition Size Multiplier:**
+  * Smaller Pot: 0.8x
+  * Recommended Pot: 1x
+  * Large Pot: 1.3x
+
+#### **Coverage Amount**
+
+| Security Score | Coverage Amount |
+| -------------- | --------------- |
+| > 90           | $300,000        |
+| 50 - 90        | Up to $200,000  |
+
+**Note:** For scores between 50 and 90, Cantina team will review & provide the exact coverage amount on a case-by-case basis.
+
+***
+
+### **Coverage Conditions**
+
+* In addition to the having sufficient score to be eligible
+
+#### **Mandatory Fix Review:**
+
+* All competitions must undergo a comprehensive fix review.
+* Coverage: Ratio of fixed findings to total findings should be more than 90%
+* If fixes from the competition introduce new logic, an additional review of this logic is required. Protocol eligibility and coverage amount will only be reassessed after this additional logic review is completed successfully.
+* Also, if a separate comprehensive review/competition is prescribed then it must be completed to be eligible.
+
+#### Scope:
+
+* Only the code at the specified commit hash, and the files that were in scope for the Spearbit/Cantina review and competition, are eligible for coverage.
+* Any further change in the code that was not reviewed by Spearbit/Cantina as a part of the competition or the fix review that may result in a bug would not be eligible for the bounty
+
+#### Vulnerabilities:
+
+* The coverage applies to only Critical severity bugs as defined on the respective bounty homepage or cantina [docs](https://docs.cantina.xyz/cantina-docs/cantina-bounties/bounty-severity-classification)
+* Cantina Triaging team has the final say on the severity of the submission.
+
+***
+
+### **Example Calculations:**
+
+#### **Example 1:** Ideal Scenario
+
+* Findings: 0 High, 0 Medium (Total Penalty: 0 points)
+* Timeline adhered to: No penalty
+* Spearbit review: 1.2x
+* Large Pot multiplier: 1.3x
+* Multiple security measures: +10 points
+
+**Calculation:**
+
+* Adjusted Score: (100 + 10) = 110 points
+* Multipliers: 110 x 1.2 x 1.3 = 171.6 points (capped at 100 points)
+* Final Coverage: **$300,000**
+
+#### **Example 2:** Multiple Medium Findings
+
+* Findings: 0 High, 9 Medium (Total Penalty: 45 points)
+* Timeline adhered to: No penalty
+* Spearbit review: 1.2x
+* Large Pot multiplier: 1.3x
+* Multiple security measures: +10 points
+
+**Calculation:**
+
+* Adjusted Score: (100 - 45 + 10) = 65 points
+* Multipliers: 65 x 1.2 x 1.3 = 101.4 points (capped at 100 points)
+* Final Coverage: **$300,000**
+
+#### **Example 3:** Lower Scenario
+
+* Findings: 3 High, 4 Medium (Total Penalty: 50 points)
+* Timeline reduced: -10 points
+* Cantina review: 1.0x
+* Smaller Pot multiplier: 0.8x
+* Single security measure: +0 points
+
+**Calculation:**
+
+* Adjusted Score: (100 - 50 - 10) = 40 points
+* Multipliers: 40 x 1.0 x 0.8 = 32 points
+* Final Coverage: **Not Eligible (below 50 points)**
+
+***
+
