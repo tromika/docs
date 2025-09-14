@@ -5,35 +5,36 @@ description: "Use comments and pings in Cantina Code to collaborate, notify user
 
 # 🔶 Comments & Pings
 
-On Cantina Code it is possible to **write comments** and **ping** other users so they receive a notification. **The functionality surrounding these features is dependent of the security review type and Cantina Repository settings** (e.g., a regular security review may have different functionality from a competition or bug bounty).
+On Cantina Code it is possible to **write comments** and **ping** other users so they receive a notification. **The functionality surrounding these features is dependent on the security review type and Cantina Repository settings** (e.g., a regular security review may have different functionality from a competition or bug bounty).
 
 ## Comments
 
-Comment functionality is intuitive, if you need a refresher on the interface visit the [code-review](code-review/ "mention") section. While in Code Review mode, hovering over a line of code will display a blue box at the right side of the line number
+Comment functionality is intuitive. If you need a refresher on the interface, visit the [Code Review](/cantina-code/cantina-code-for-security-researchers/code-review) section. While in Code Review mode, hovering over a line of code will display a blue box at the right side of the line number
 
 <figure><img src="../../.gitbook/assets/image (19).png" alt=""><figcaption><p>Hovering over a line displays blue box</p></figcaption></figure>
 
-which when clicked will give you the choice to submit comments or start a [findings-submission.md](findings/findings-submission.md "mention").
+which, when clicked, lets you submit a comment or start a [Findings submission](/cantina-code/cantina-code-for-security-researchers/findings/findings-submission).
 
 <figure><img src="../../.gitbook/assets/image (18).png" alt="Smart contract audit comment editor."><figcaption><p>Writing text in the comment box</p></figcaption></figure>
 
 Depending on the context of the review, comments can be seen by everyone inside the Cantina Code Repository, your teammates or only you. Consult with the repository administrator if you have any doubts about comment visibility.
 
-{% hint style="info" %}
-A feature to quickly jump through comments is worked on. In the meantime to make efficient use of comments you can:
+<Tip>
+A feature to quickly jump through comments is being worked on. In the meantime:
 
 1. Ping users on the comment so they receive a notification and can quickly navigate to it.
-2. Copy the comment permalink and share with other users.
-{% endhint %}
+2. Copy the comment permalink and share it with other users.
 
-Comments also support Latex formulas and Mermaid.js diagrams! Learn more in the [diagrams-and-formulas.md](diagrams-and-formulas.md "mention") section.
+</Tip>
+
+Comments also support LaTeX formulas and Mermaid.js diagrams! Learn more in the [Diagrams and formulas](/cantina-code/cantina-code-for-security-researchers/diagrams-and-formulas) section.
 
 ## Pings
 
-Pings enable a user to notify another user. As a Security Researcher to notify all clients, use the **`@project`** tag. The user being notified will receive a notification via **email** and the [security-researcher-dashboard.md](../../cantina-account/security-researcher-account/security-researcher-dashboard.md "mention") page.
+Pings enable a user to notify another user. As a Security Researcher, to notify all clients use the **`@project`** tag. The notified user will receive a notification via **email** and on the [Security Researcher Dashboard](/cantina-account/security-researcher-account/security-researcher-dashboard) page.
 
 <figure><img src="../../.gitbook/assets/B1Ejc_CWR.png" alt="Security researcher code review thread."><figcaption><p>Security Researcher pinging a client to notice a comment</p></figcaption></figure>
 
-Pings are also dependent on the security review type and repository settings. The number of pings for competitions are reflected by this infographic:
+Pings are also dependent on the security review type and repository settings. The number of pings for competitions is reflected by this infographic:
 
 <figure><img src="../../.gitbook/assets/pings.png" alt="Web3 security researcher ping allocations."><figcaption></figcaption></figure>

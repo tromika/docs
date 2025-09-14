@@ -9,85 +9,130 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
+    "dropdowns": [
       {
-        "tab": "Guides",
+        "dropdown": "Documentation",
+        "icon": "book",
+        "description": "Cantina Documentation",
         "groups": [
           {
             "group": "Getting started",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
+              "index"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Services",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "services/security-reviews",
+              "services/competitions",
+              "services/bug-bounty",
+              "services/guilds",
+              "services/public-goods"
+            ]
+          },
+            
+          {
+            "group": "Referral Program",
+            "pages": [
+              "referral-program"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Cantina Account",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "cantina-account/claim-an-account",
+              {
+                "group": "Company Account",
+                "pages": [
+                  "cantina-account/company-account/create-a-company-account",
+                  "cantina-account/company-account/managing-users",
+                  "cantina-account/company-account/company-dashboard",
+                  "cantina-account/company-account/company-reviews"
+                ]
+              },
+              {
+                "group": "Security Researcher Account",
+                "pages": [
+                  "cantina-competitions/judging-process",
+                  "cantina-account/security-researcher-account/security-researcher-dashboard",
+                  "cantina-account/security-researcher-account/calendar",
+                  "cantina-account/security-researcher-account/reviews",
+                  "cantina-account/security-researcher-account/kyc-and-payments"
+                ]
+              },
             ]
           },
           {
-            "group": "AI tools",
+            "group": "Cantina Code",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "cantina-code/cantina-code-for-security-researchers"
+            ]
+          },
+          {
+            "group": "Cantina Competitions",
+            "pages": [
+              {
+                "group": "For Security Researchers",
+                "pages": [
+                  "cantina-competitions/for-security-researchers",
+                  "cantina-competitions/for-security-researchers/payments",
+                  "cantina-competitions/for-security-researchers/teams",
+                  "cantina-competitions/for-security-researchers/finding-status",
+                  "cantina-competitions/for-security-researchers/finding-labels"
+                ]
+              },
+              {
+                "group": "For Companies",
+                "pages": [
+                  "cantina-competitions/for-companies",
+                  "cantina-competitions/for-companies/competition-submission-template"
+                ]
+              },
+              {
+                "group": "Judging Process",
+                "pages": [
+                  "cantina-competitions/judging-process",
+                  "cantina-competitions/judging-process/finding-severity-criteria",
+                  "cantina-competitions/judging-process/scoring",
+                  "cantina-competitions/judging-process/judging-phase",
+                  "cantina-competitions/judging-process/escalation-process"
+                ]
+              },
+              "cantina-competitions/fellowship-steward-model"
+            ]
+          },
+          {
+            "group": "Cantina Bounties",
+            "pages": [
+              {
+                "group": "For Security Researchers",
+                "pages": [
+                  "cantina-bounties/for-security-researchers",
+                  "cantina-bounties/for-security-researchers/bug-bounty-finding-status"
+                ]
+              },
+              "cantina-bounties/bounty-severity-classification",
+              "cantina-bounties/mediation-process-for-bounties"
+            ]
+          },
+          {
+            "group": "Cantina Bug Bounty Coverage",
+            "pages": [
+              "cantina-bug-bounty-coverage/cantina-coverage-details"
+            ]
+          },
+          {
+            "group": "FAQ",
+            "pages": [
+              "faq/faq-competitions",
+              "faq/faq-security-reviews"
             ]
           }
         ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
-        ]
+  }]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
-  },
+  ,
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
