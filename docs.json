@@ -54,13 +54,14 @@
               {
                 "group": "Security Researcher Account",
                 "pages": [
-                  "cantina-competitions/judging-process",
+                  "cantina-account/security-researcher-account/security-researcher-account",
+                  "cantina-account/security-researcher-account/create-security-researcher-account",
                   "cantina-account/security-researcher-account/security-researcher-dashboard",
                   "cantina-account/security-researcher-account/calendar",
                   "cantina-account/security-researcher-account/reviews",
                   "cantina-account/security-researcher-account/kyc-and-payments"
                 ]
-              },
+              }
             ]
           },
           {
